@@ -13,6 +13,8 @@ class DosesController < ApplicationController
   # GET /doses/new
   def new
     @dose = Dose.new
+    @cocktail = Cocktail.find(params[:cocktail_id])
+
   end
 
   # GET /doses/1/edit
@@ -22,9 +24,10 @@ class DosesController < ApplicationController
   # POST /doses
   def create
     @dose = Dose.new(dose_params)
+    @dose.cocktail = Cocktail.find(params[:cocktail_id])
 
     if @dose.save
-      redirect_to @dose, notice: 'Dose was successfully created.'
+      redirect_to @dose.cocktail, notice: 'Dose was successfully created.'
     else
       render :new
     end
@@ -42,7 +45,7 @@ class DosesController < ApplicationController
   # DELETE /doses/1
   def destroy
     @dose.destroy
-    redirect_to doses_url, notice: 'Dose was successfully destroyed.'
+    redirect_to cocktail_path, notice: 'Dose was successfully destroyed.'
   end
 
   private
