@@ -8,6 +8,8 @@ class CocktailsController < ApplicationController
 
   # GET /cocktails/1
   def show
+    @dose = Dose.new
+    @show_doses = Dose.where(cocktail_id: @cocktail)
   end
 
   # GET /cocktails/new

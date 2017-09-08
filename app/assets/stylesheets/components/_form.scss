@@ -1,7 +1,3 @@
-// Place all the styles related to the Restaurants controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 .wrapper-white{
   background-color: white
 }
@@ -13,7 +9,7 @@
 }
 
 #index-title{
-  color: white;
+  color: black;
   text-shadow: 2px 2px 2px black;
 }
 
@@ -37,5 +33,5 @@ h1 {
 h2 {
   font-family: 'Sedgwick Ave', cursive;
   font-size: 50px;
-  color: black !important;
+  color: red !important;
 }
